@@ -1,13 +1,8 @@
+name: BFP Replay Dispatch
 on:
   workflow_dispatch:
-
---- a/.github/workflows/build-wasm-libs.yml
-+++ b/.github/workflows/build-wasm-libs.yml
-@@ -142,4 +142,4 @@
-           rm $EMSDK/upstream/emscripten/system/lib/embind/bind.cpp
-           mv $EMSDK/upstream/emscripten/system/lib/embind/bind.cpp.bak $EMSDK/upstream/emscripten/system/lib/embind/bind.cpp
-           echo "-------------------------- Restore patches DONE! ---------------------------------"
--          cat $EMSDK/upstream/emscripten/system/lib/embind/bind.cpp
-+          cat $EMSDK/upstream/emscripten/system/lib/embind/bind.cpp
-
-# bfp-replay-registration: 977ce757ee00-llm
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'bfp replay dispatch probe'
